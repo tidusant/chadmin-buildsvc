@@ -631,13 +631,12 @@ func (builder *Builder) FTPCopyDir(source string) (err error) {
 	return
 }
 func (builder *Builder) FTPUpload(filename, filepath, content string) {
-	if builder.ftpclient.Location == nil {
+	if builder.ftpclient == nil {
 		log.Errorf("FTPError: builder.ftpclient not connect")
 		return
 	}
 
 	builder.ftpclient.ChangeDir(builder.bconfig.Path)
-
 	// builder.logtxt += "\n" + fmt.Sprintf("map dir: %s-%s", filepath, filename)
 	// cur, _ := builder.ftpclient.CurrentDir()
 	// builder.logtxt += "\n" + fmt.Sprintf("FTP current dir: %s", cur)
