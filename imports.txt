@@ -4,5 +4,6 @@ github.com/nfnt/resize
 github.com/jlaffaye/ftp
 gopkg.in/mgo.v2
 gopkg.in/mgo.v2/bson
+golang.org/x/net/html
 github.com/tidusant/c3m-common/...
 github.com/tidusant/chadmin-repo/...
