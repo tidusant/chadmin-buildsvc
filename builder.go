@@ -65,6 +65,7 @@ var (
 
 func (builder *Builder) Run() {
 	builder.bs = rpb.GetBuild()
+	log.Debugf("start build " + builder.bs.Object)
 	builder.starttime = time.Now()
 	if builder.bs.Object == "" {
 		return
@@ -124,7 +125,7 @@ func (builder *Builder) Run() {
 
 		}
 	}
-	log.Debugf("start build " + builder.bs.Object)
+
 	if builder.bs.Object == "script" {
 		builder.buildScript()
 	} else if builder.bs.Object == "image" {
