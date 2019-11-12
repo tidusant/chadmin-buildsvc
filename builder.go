@@ -65,7 +65,7 @@ var (
 
 func (builder *Builder) Run() {
 	builder.bs = rpb.GetBuild()
-	log.Debugf("start build " + builder.bs.Object)
+
 	builder.starttime = time.Now()
 	if builder.bs.Object == "" {
 		return
@@ -82,6 +82,8 @@ func (builder *Builder) Run() {
 	host := builder.bconfig.Host
 	hostsplit := strings.Split(host, ":")
 	port := "21"
+
+	log.Debugf("start build " + builder.bs.Object + " shopid:" + builder.bs.ShopId)
 
 	builder.bs.Domain = builder.bconfig.Domain
 	if len(hostsplit) > 1 {
