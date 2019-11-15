@@ -497,14 +497,21 @@ func (builder *Builder) ScaleImages(imgfolder string, imagesizes []models.Templa
 	for _, f := range imagefiles {
 		filePath := imgfolder + "/" + f.Name()
 		if !f.IsDir() {
+			//check is svg
 			b, _ := ioutil.ReadFile(filePath)
+			isSVG := false
+			if f.Name()[len(f.Name())-4:] == ".svg" {
+				isSVG = true
+
+			}
+
 			file, err := os.Open(filePath)
 			imageconfig, _, _ := image.DecodeConfig(file)
 			if err != nil {
 				builder.logtxt += "\n" + fmt.Sprintf("error reading %s: %v\n", filePath, err)
 			}
 
-			if imageconfig.Width > 0 {
+			if imageconfig.Width > 0 || isSVG {
 				for _, size := range imagesizes {
 					w, _ := strconv.Atoi(size.Value)
 					newImage := b
