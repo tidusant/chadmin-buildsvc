@@ -92,6 +92,7 @@ func (builder *Builder) Run() {
 	}
 
 	var err error
+	log.Debugf("connecting to " + host + ":" + port)
 	builder.ftpclient, err = ftp.Dial(host + ":" + port)
 	if err != nil {
 		log.Errorf("FTPError: builder.shopid %s cannot connect to %s", builder.bs.ShopId, builder.bconfig.Host)
