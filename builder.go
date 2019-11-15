@@ -170,6 +170,7 @@ func (builder *Builder) Run() {
 // 	}
 // 	return
 // }
+
 // func renderInnerHtml(n *html.Node) string {
 // 	str := ""
 
