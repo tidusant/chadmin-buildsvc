@@ -504,6 +504,9 @@ func (builder *Builder) ScaleImages(imgfolder string, imagesizes []models.Templa
 				isSVG = true
 
 			}
+			if f.Name()[len(f.Name())-4:] == ".ico" {
+				continue
+			}
 
 			file, err := os.Open(filePath)
 			imageconfig, _, _ := image.DecodeConfig(file)
