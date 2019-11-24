@@ -881,7 +881,7 @@ func (builder *Builder) bottomScript(pagename, altpagename, langcode, seo string
 		basescript = c3mcommon.JSMinify(basescript)
 	}
 	basescript += bottomjs
-	//layout.html
+	//layout.html test dev
 	// filebytes, err = ioutil.ReadFile(builder.temppath + "/layout.html")
 	// if !c3mcommon.CheckError(fmt.Sprintf("cannot read file %s!", "layout.html"), err) {
 	// 	fmt.Sprintf("cannot read file %s!", "layout.html")
