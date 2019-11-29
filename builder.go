@@ -709,8 +709,7 @@ func (builder *Builder) bottomScript(pagename, altpagename, langcode, seo string
 	index := string(filebytes)
 
 	basescript := `var localurl="` + builder.bs.Domain + `";
-		var debug=` + builder.dev + `;
-		var showlog=true;		
+		var debug=` + builder.dev + `;		
 		var sitelang="` + langcode + `";
 		var siteurl=Templateurl=Imageurl="` + builder.bs.Domain + `";
 		var apiurl="` + builder.bconfig.ApiUrl + `";		
