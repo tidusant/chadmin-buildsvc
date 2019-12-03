@@ -638,6 +638,7 @@ func (builder *Builder) FTPCopyDir(source string) (err error) {
 					log.Errorf("FTPError: cannot Stor file %s err %s", sourcefilepointer, err)
 				}
 			}
+			file.Close()
 
 		}
 
