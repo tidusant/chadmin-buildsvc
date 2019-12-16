@@ -1039,7 +1039,7 @@ func (builder *Builder) buildCommonData() {
 			}
 			resourcestr[lang] += `"` + rsc.Key + `":"`
 			if value, ok := rsc.Value[lang]; ok {
-				resourcestr[lang] += html.EscapeString(value)
+				resourcestr[lang] += value
 			}
 			resourcestr[lang] += `",`
 		}
